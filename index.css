@@ -3,6 +3,20 @@
 	--color-light: #fafafa;
 }
 
+[data-theme='light'] {
+	--color-body: var(--color-light);
+	--font-color: var(--color-dark);
+	--font-color-invert: var(--color-light);
+	--color-brand: #334455;
+}
+
+[data-theme='dark'] {
+	--color-body: var(--color-dark);
+	--font-color: var(--color-light);
+	--font-color-invert: var(--color-dark);
+	--color-brand: #fade00;
+}
+
 @media screen and (min-width: 900px) {
 	html {
 		font-size: 16px;
@@ -19,22 +33,6 @@
 	}
 }
 
-[data-theme='light'] {
-	--color-body: var(--color-light);
-	--font-color: var(--color-dark);
-	--font-color-invert: var(--color-light);
-	--font-size: 16px;
-	--color-masthead: #334455;
-}
-
-[data-theme='dark'] {
-	--color-body: var(--color-dark);
-	--font-color: var(--color-light);
-	--font-color-invert: var(--color-dark);
-	--font-size: 16px;
-	--color-masthead: #fade00;
-}
-
 body {
 	background: var(--color-body);
 	color: var(--font-color);
@@ -44,7 +42,8 @@ body {
 }
 
 #masthead {
-	background: var(--color-masthead);
+    background: #334455; /* Fallback for IE, obviously */
+	background: var(--color-brand);
 	padding: 1rem;
     text-align: right;
 }
