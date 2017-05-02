@@ -1,5 +1,5 @@
 :root {
-	--color-dark: #444;
+	--color-dark: #444444;
 	--color-light: #fafafa;
 }
 
@@ -22,6 +22,7 @@
 [data-theme='light'] {
 	--color-body: var(--color-light);
 	--font-color: var(--color-dark);
+	--font-color-invert: var(--color-light);
 	--font-size: 16px;
 	--color-masthead: #334455;
 }
@@ -29,6 +30,7 @@
 [data-theme='dark'] {
 	--color-body: var(--color-dark);
 	--font-color: var(--color-light);
+	--font-color-invert: var(--color-dark);
 	--font-size: 16px;
 	--color-masthead: #fade00;
 }
@@ -44,8 +46,16 @@ body {
 #masthead {
 	background: var(--color-masthead);
 	padding: 1rem;
+    text-align: right;
 }
 
 main {
 	padding: 1rem;
+}
+
+button {
+	-webkit-appearance: none;
+	background: rgba(0,0,0,0);
+	border: none;
+	color: var(--font-color-invert);
 }
